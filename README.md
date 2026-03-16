@@ -24,11 +24,30 @@ $ echos PIN
 
 ## Installation
 
+### Download binary (recommended)
+
+Detect your platform and drop the binary straight into `$PATH`:
+
+```sh
+curl -fsSL https://github.com/leocavalcante/echos/releases/latest/download/echos_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/') \
+  -o /usr/local/bin/echos && chmod +x /usr/local/bin/echos
+```
+
+Or pick your binary from the [releases page](https://github.com/leocavalcante/echos/releases) and install it manually:
+
+```sh
+# example: macOS arm64
+curl -fsSL https://github.com/leocavalcante/echos/releases/latest/download/echos_darwin_arm64 \
+  -o /usr/local/bin/echos && chmod +x /usr/local/bin/echos
+```
+
+### Go install
+
 ```sh
 go install leocavalcante.com/echos@latest
 ```
 
-Or build from source:
+### Build from source
 
 ```sh
 git clone https://github.com/leocavalcante/echos.git
